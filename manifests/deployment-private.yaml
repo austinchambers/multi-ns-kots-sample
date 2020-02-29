@@ -20,7 +20,7 @@
           component: nginx
       spec:
         imagePullSecrets:
-          - name: kotsadm-replicated-registry
+          - name: second-namespace-registry-secret
         containers:
           - name: nginx
             image: registry.replicated.com/multi-namespace-kots-sample/nginx:private
