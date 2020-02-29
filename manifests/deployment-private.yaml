@@ -19,6 +19,8 @@
           app: private-example
           component: nginx
       spec:
+        imagePullSecrets:
+          - name: kotsadm-replicated-registry
         containers:
           - name: nginx
             image: registry.replicated.com/multi-namespace-kots-sample/nginx:private

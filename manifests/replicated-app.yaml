@@ -6,6 +6,7 @@ metadata:
 spec:
   title: Nginx Example
   icon: https://cdn.auth0.com/blog/nginx-plus/nginx-logo.png
+  kustomizeVersion: "2.0.3"
   ports:
     - serviceName: "example-nginx"
       servicePort: 80
