@@ -1,0 +1,28 @@
+---
+  apiVersion: apps/v1
+  kind: Deployment
+  metadata:
+    name: private-nginx
+    namespace: repl{{ ConfigOption "namespace" }}
+    labels:
+      app: private-example
+      component: nginx
+  spec:
+    replicas: 1
+    selector:
+      matchLabels:
+        app: private-example
+        component: nginx
+    template:
+      metadata:
+        labels:
+          app: private-example
+          component: nginx
+      spec:
+        containers:
+          - name: nginx
+            image: registry.replicated.com/multi-namespace-kots-sample/nginx:private
+            resources:
+              limits:
+                memory: '256Mi'
+                cpu: '500m'
